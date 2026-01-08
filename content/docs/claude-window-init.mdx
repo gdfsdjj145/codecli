@@ -1,0 +1,100 @@
+---
+title: Windows 环境变量配置
+description: 在 Windows 系统中配置 Claude Code 环境变量的详细指南
+---
+
+<CTABanner />
+
+本文介绍在 Windows 系统中设置 Claude Code 环境变量的多种方法。
+
+## 临时配置方式
+
+以下方法仅在当前命令行窗口有效，关闭后需重新设置。
+
+### PowerShell
+
+```powershell
+$env:ANTHROPIC_BASE_URL = "您的API地址"
+$env:ANTHROPIC_AUTH_TOKEN = "您的Token"
+claude
+```
+
+### 命令提示符（CMD）
+
+```cmd
+set ANTHROPIC_BASE_URL=您的API地址
+set ANTHROPIC_AUTH_TOKEN=您的Token
+claude
+```
+
+## 永久配置方式
+
+以下方法会永久保存环境变量，新开命令行窗口即可使用。
+
+### 方法一：setx 命令
+
+```cmd
+setx ANTHROPIC_BASE_URL "您的API地址"
+setx ANTHROPIC_AUTH_TOKEN "您的Token"
+```
+
+<Callout type="info">
+使用 setx 后需要重新打开命令行窗口才能生效。
+</Callout>
+
+### 方法二：图形界面设置
+
+1. 右键"此电脑" → 点击"属性"
+2. 点击"高级系统设置"
+3. 点击"环境变量"按钮
+4. 在"用户变量"中点击"新建"
+5. 分别添加两个变量：
+   - 变量名：`ANTHROPIC_BASE_URL`，值：您的API地址
+   - 变量名：`ANTHROPIC_AUTH_TOKEN`，值：您的Token
+6. 点击"确定"保存
+
+## 验证配置
+
+设置完成后，打开新的命令行窗口验证配置是否生效：
+
+### PowerShell 验证
+
+```powershell
+echo $env:ANTHROPIC_BASE_URL
+echo $env:ANTHROPIC_AUTH_TOKEN
+```
+
+### CMD 验证
+
+```cmd
+echo %ANTHROPIC_BASE_URL%
+echo %ANTHROPIC_AUTH_TOKEN%
+```
+
+## 配置方式对比
+
+| 方式 | 生效范围 | 重启后保留 | 推荐场景 |
+|------|----------|------------|----------|
+| PowerShell 临时 | 当前窗口 | 否 | 临时测试 |
+| CMD 临时 | 当前窗口 | 否 | 临时测试 |
+| setx 命令 | 新窗口生效 | 是 | 日常使用 |
+| 图形界面 | 新窗口生效 | 是 | 不熟悉命令行 |
+
+## 注意事项
+
+- 临时配置方式适合快速测试，不建议日常使用
+- 永久配置后需要重新打开命令行窗口
+- 请妥善保管您的 Token，避免泄露
+- 如遇问题，可尝试以管理员身份运行命令行
+
+<Cards>
+  <Card title="安装配置指南" href="/docs/claude-init" />
+  <Card title="清理缓存" href="/docs/claude-cache" />
+  <Card title="常见问题" href="/docs/faq" />
+</Cards>
+
+<CTABanner
+  title="准备好开始了吗？"
+  description="联系我们获取 API 凭证，开启高效 AI 编程体验"
+  buttonText="获取服务"
+/>

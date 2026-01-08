@@ -1,0 +1,12 @@
+{
+  "pages": [
+    "--- 🏠 CodeCli 使用---",
+    "best-practices",
+    "service",
+    "faq",
+    "--- 📖 Claude Code 教程 ---",
+    "claude-init",
+    "claude-window-init",
+    "claude-cache"
+  ]
+}

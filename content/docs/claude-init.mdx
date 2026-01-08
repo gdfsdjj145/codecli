@@ -1,0 +1,147 @@
+---
+title: Claude Code 安装配置
+description: Claude Code 完整安装与环境配置指南
+---
+
+<CTABanner />
+
+本指南将帮助您完成 Claude Code 的安装和配置，快速开始 AI 编程之旅。
+
+## 1. 安装 Node.js
+
+确保 Node.js 版本 ≥ 18.0（已安装可跳过此步骤）
+
+### Ubuntu / Debian
+
+```bash
+curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo bash -
+sudo apt-get install -y nodejs
+node --version
+```
+
+### macOS
+
+```bash
+sudo xcode-select --install
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew install node
+node --version
+```
+
+## 2. 卸载旧版本（可选）
+
+如果之前安装过其他 Claude Code 客户端，建议先卸载。
+
+### 检查安装位置
+
+```bash
+# 检查本地项目安装
+npm ls @anthropic-ai/claude-code
+
+# 检查全局安装
+npm ls -g @anthropic-ai/claude-code
+```
+
+### 执行卸载
+
+```bash
+# 卸载本地安装
+npm uninstall @anthropic-ai/claude-code
+
+# 卸载全局安装
+npm uninstall -g @anthropic-ai/claude-code
+```
+
+## 3. 安装 Claude Code
+
+### 方式一：Homebrew 安装（推荐）
+
+```bash
+# macOS / Linux
+brew install --cask claude-code
+```
+
+### 方式二：脚本安装
+
+```bash
+# macOS / Linux / WSL
+curl -fsSL https://claude.ai/install.sh | bash
+```
+
+### 方式三：Windows PowerShell
+
+```powershell
+irm https://claude.ai/install.ps1 | iex
+```
+
+### 方式四：npm 安装
+
+```bash
+npm install -g @anthropic-ai/claude-code
+claude --version
+```
+
+## 4. 配置并启动
+
+获取您的 API 凭证后，在项目目录下运行：
+
+```bash
+cd your-project-folder
+export ANTHROPIC_AUTH_TOKEN=您的Token
+export ANTHROPIC_BASE_URL=您的API地址
+claude
+```
+
+首次运行时：
+1. 选择您喜欢的主题
+2. 按 Enter 确认安全须知
+3. 按 Enter 使用默认 Terminal 配置
+4. 按 Enter 信任工作目录
+
+## 5. 持久化环境变量
+
+为避免每次重复输入，可将环境变量写入配置文件。
+
+### macOS / Linux
+
+```bash
+# 写入 bash 配置
+echo 'export ANTHROPIC_AUTH_TOKEN=您的Token' >> ~/.bashrc
+echo 'export ANTHROPIC_BASE_URL=您的API地址' >> ~/.bashrc
+
+# 写入 zsh 配置（如使用 zsh）
+echo 'export ANTHROPIC_AUTH_TOKEN=您的Token' >> ~/.zshrc
+echo 'export ANTHROPIC_BASE_URL=您的API地址' >> ~/.zshrc
+```
+
+重启终端后即可直接使用：
+
+```bash
+cd your-project-folder
+claude
+```
+
+### Windows
+
+Windows 环境变量配置请参考 [Windows 配置指南](/docs/claude-window-init)。
+
+## 常见问题
+
+| 问题 | 解决方案 |
+|------|----------|
+| node 版本过低 | 升级到 Node.js 18 或更高版本 |
+| 安装权限不足 | 使用 sudo 或以管理员身份运行 |
+| 连接超时 | 检查网络连接和 API 地址配置 |
+| Token 无效 | 确认 Token 格式正确且未过期 |
+
+<Cards>
+  <Card title="Windows 配置" href="/docs/claude-window-init" />
+  <Card title="清理缓存" href="/docs/claude-cache" />
+  <Card title="常见问题" href="/docs/faq" />
+</Cards>
+
+<CTABanner
+  title="准备好开始了吗？"
+  description="联系我们获取 API 凭证，开启高效 AI 编程体验"
+  buttonText="获取服务"
+/>

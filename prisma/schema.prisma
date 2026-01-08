@@ -1,0 +1,80 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model DbUserDemo {
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  created_time DateTime @db.Date @default(now())
+  nickName     String
+  tenant_id    String?  @db.ObjectId
+}
+
+model Order {
+  id             String   @id @default(auto()) @map("_id") @db.ObjectId
+  created_time   DateTime @db.Date @default(now())
+  identifier     String
+  name           String
+  orderId        String   @unique
+  orderType      String
+  price          Float
+  promoter       String?
+  promotionPrice Float
+  transactionId  String   @unique
+}
+
+model PayOrder {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  created_time  DateTime @db.Date
+  identifier String
+  orderType  String
+  price      Float
+  sign       String?
+  status     String
+}
+
+
+model Promotion {
+  id             String   @id @default(auto()) @map("_id") @db.ObjectId
+  checkout       Boolean  @default(false)
+  created_time   DateTime @db.Date @default(now())
+  identifier     String
+  orderType      String
+  promotionPrice Float
+  purchaser      String
+}
+
+model User {
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  avatar       String?
+  created_time DateTime @db.Date @default(now())
+  email        String?
+  nickName     String
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  phone        String?
+  wechatOpenId String?
+
+  @@unique([wechatOpenId, phone, email])
+}
+
+model VerificationCode {
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  code         String
+  created_time DateTime @db.Date @default(now())
+  identifier   String
+  expires_at   DateTime @db.Date
+}
+
+model VerificationWxQrCode {
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  created_time DateTime @db.Date @default(now())
+  identifier   String   @unique
+  isScan       Boolean
+  openId       String?
+}
+

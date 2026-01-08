@@ -1,0 +1,55 @@
+@import 'tailwindcss';
+@import 'fumadocs-ui/css/neutral.css';
+@import 'fumadocs-ui/css/preset.css';
+
+@layer utilities {
+  :root {
+    --fd-primary: 0 171 182; /* #00abb6 */
+
+    /* 布局宽度设置 */
+    --fd-sidebar-width: 260px;
+    --fd-toc-width: 220px;
+    --fd-layout-width: 1400px;
+  }
+}
+
+/* 整体文档布局 - 使用 Fumadocs 背景色 */
+#nd-docs-layout {
+  background-color: rgb(var(--fd-background));
+}
+
+/* 左侧侧边栏 - 使用 Fumadocs 次级背景色 */
+#nd-docs-layout > aside:first-of-type,
+[data-sidebar] {
+  background-color: rgb(var(--fd-secondary));
+}
+
+/* 平滑滚动 */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 动画 */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}

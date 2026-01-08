@@ -1,0 +1,87 @@
+---
+title: 清理 Claude Code 缓存
+description: 如何清理本地 Claude Code 缓存和配置文件
+---
+
+<CTABanner />
+
+Claude Code 在使用过程中会在本地生成缓存、日志和临时文件。定期清理这些文件可以释放磁盘空间并解决一些常见问题。
+
+## Windows 系统
+
+### 方法一：使用文件资源管理器
+
+在 `C:\Users\你的用户名\` 目录下找到以下文件和目录：
+
+- `.claude` 目录
+- `.claude.json` 文件
+
+将它们重命名备份，例如：
+
+```
+.claude → .claude-backup-20250108
+.claude.json → .claude.json-backup-20250108
+```
+
+### 方法二：使用命令行
+
+打开 PowerShell 或 CMD，执行：
+
+```powershell
+# 备份并移动配置
+Rename-Item "$env:USERPROFILE\.claude" ".claude-backup-$(Get-Date -Format 'yyyyMMdd')"
+Rename-Item "$env:USERPROFILE\.claude.json" ".claude.json-backup-$(Get-Date -Format 'yyyyMMdd')"
+```
+
+## macOS / Linux 系统
+
+### 方法一：移动会话记录（推荐）
+
+只移动项目会话记录，保留基本配置：
+
+```bash
+#!/bin/bash
+# 移动会话记录
+mv ~/.claude/projects ~/.claude/projects-$(date "+%Y%m%d%H%M%S")
+mv ~/.claude/shell-snapshots ~/.claude/shell-snapshots-$(date "+%Y%m%d%H%M%S")
+mv ~/.claude/statsig ~/.claude/statsig-$(date "+%Y%m%d%H%M%S")
+mv ~/.claude/todos ~/.claude/todos-$(date "+%Y%m%d%H%M%S")
+
+# 查看结果
+ls ~/.claude
+```
+
+### 方法二：完全清理
+
+移动所有配置和记录（需要重新配置）：
+
+```bash
+#!/bin/bash
+# 完全移动配置
+mv ~/.claude ~/.claude-$(date "+%Y%m%d%H%M%S")
+mv ~/.claude.json ~/.claude.json-$(date "+%Y%m%d%H%M%S")
+```
+
+## 最佳实践
+
+| 建议 | 说明 |
+|------|------|
+| 定期清理 | 建议每月清理一次缓存和日志 |
+| 备份配置 | 清理前务必备份重要配置文件 |
+| 完全退出 | 清理前确保 Claude Code 完全退出 |
+| 问题排查 | 遇到异常时先尝试清理缓存 |
+
+## 需要帮助？
+
+如果清理后仍有问题，欢迎联系我们获取技术支持。
+
+<Cards>
+  <Card title="安装配置指南" href="/docs/claude-init" />
+  <Card title="常见问题" href="/docs/faq" />
+</Cards>
+
+<CTABanner
+  title="准备好开始了吗？"
+  description="联系我们获取 API 凭证，开启高效 AI 编程体验"
+  buttonText="获取服务"
+/>
