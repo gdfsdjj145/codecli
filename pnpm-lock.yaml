@@ -12,9 +12,6 @@ importers:
 
   .:
     dependencies:
-      '@alicloud/pop-core':
-        specifier: ^1.7.13
-        version: https://registry.npmmirror.com/@alicloud/pop-core/-/pop-core-1.7.13.tgz(supports-color@https://registry.npmmirror.com/supports-color/-/supports-color-8.1.1.tgz)
       '@auth/prisma-adapter':
         specifier: ^2.11.1
         version: 2.11.1(@prisma/client@https://registry.npmmirror.com/@prisma/client/-/client-5.14.0.tgz(prisma@https://registry.npmmirror.com/prisma/-/prisma-5.14.0.tgz))(nodemailer@6.10.1)
@@ -261,11 +258,6 @@ packages:
 
   '@adobe/css-tools@4.4.4':
     resolution: {integrity: sha512-Elp+iwUx5rN5+Y8xLt5/GRoG20WGoDCQ/1Fb+1LiGtvwbDavuSk0jhD/eZdckHAuzcDzccnkv+rEjyWfRx18gg==}
-
-  '@alicloud/pop-core@https://registry.npmmirror.com/@alicloud/pop-core/-/pop-core-1.7.13.tgz':
-    resolution: {integrity: sha512-agzr4DU+aAGW7/2mp2hP1JcNJkn/zBS0jUGQt5etIASN0MVq1tMdudVqvWbExUG0mUouo/n2VgdnjOHjswvrlA==, tarball: https://registry.npmmirror.com/@alicloud/pop-core/-/pop-core-1.7.13.tgz}
-    version: 1.7.13
-    engines: {node: '>=8.0.0'}
 
   '@alloc/quick-lru@5.2.0':
     resolution: {integrity: sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw==}
@@ -2495,10 +2487,6 @@ packages:
   big.js@5.2.2:
     resolution: {integrity: sha512-vyL2OymJxmarO8gxMr0mhChsO9QGwhynfuu4+MHTAW6czfq9humCB7rKpUjDd9YUiDPU4mzpyupFSvOClAwbmQ==}
 
-  bignumber.js@https://registry.npmmirror.com/bignumber.js/-/bignumber.js-9.1.2.tgz:
-    resolution: {integrity: sha512-2/mKyZH9K85bzOEfhXDBFZTGd1CTs+5IHpeFQo9luiBG7hghdC851Pj2WAhb6E3R6b9tZj/XKhbg4fum+Kepug==, tarball: https://registry.npmmirror.com/bignumber.js/-/bignumber.js-9.1.2.tgz}
-    version: 9.1.2
-
   body-parser@2.2.1:
     resolution: {integrity: sha512-nfDwkulwiZYQIGwxdy0RUmowMhKcFVcYXUU7m4QlKYim1rUtg83xm2yjZ40QjDuc291AJjjeSc9b++AWHSgSHw==}
     version: 2.2.1
@@ -2803,15 +2791,6 @@ packages:
     resolution: {integrity: sha512-RGwwWnwQvkVfavKVt22FGLw+xYSdzARwm0ru6DhTVA3umU5hZc28V3kO4stgYryrTlLpuvgI9GiijltAjNbcqA==}
     version: 4.4.3
     engines: {node: '>=6.0'}
-    peerDependencies:
-      supports-color: '*'
-    peerDependenciesMeta:
-      supports-color:
-        optional: true
-
-  debug@https://registry.npmmirror.com/debug/-/debug-3.2.7.tgz:
-    resolution: {integrity: sha512-CFjzYYAi4ThfiQvizrFQevTTXHtnCqWfe7x1AhgEscTz6ZbLbfoLRLPugTQyBth6f8ZERVUSyWHFD/7Wu4t1XQ==, tarball: https://registry.npmmirror.com/debug/-/debug-3.2.7.tgz}
-    version: 3.2.7
     peerDependencies:
       supports-color: '*'
     peerDependenciesMeta:
@@ -3548,10 +3527,6 @@ packages:
     version: 7.0.6
     engines: {node: '>= 14'}
 
-  httpx@https://registry.npmmirror.com/httpx/-/httpx-2.3.3.tgz:
-    resolution: {integrity: sha512-k1qv94u1b6e+XKCxVbLgYlOypVP9MPGpnN5G/vxFf6tDO4V3xpz3d6FUOY/s8NtPgaq5RBVVgSB+7IHpVxMYzw==, tarball: https://registry.npmmirror.com/httpx/-/httpx-2.3.3.tgz}
-    version: 2.3.3
-
   iconv-lite@0.6.3:
     resolution: {integrity: sha512-4fCk79wshMdzMp2rH06qWrJE4iolqLhCUH+OiuIgU++RB0+94NlDL81atO7GX55uUKueo0txHNtvEyI6D7WdMw==}
     engines: {node: '>=0.10.0'}
@@ -3831,10 +3806,6 @@ packages:
     engines: {node: '>=6'}
     hasBin: true
 
-  json-bigint@https://registry.npmmirror.com/json-bigint/-/json-bigint-1.0.0.tgz:
-    resolution: {integrity: sha512-SiPv/8VpZuWbvLSMtTDU8hEfrZWg/mH/nV/b4o0CYbSxu1UIQPLdwKOCIyLQX+VIPO5vrLX3i8qtqFyhdPSUSQ==, tarball: https://registry.npmmirror.com/json-bigint/-/json-bigint-1.0.0.tgz}
-    version: 1.0.0
-
   json-parse-better-errors@1.0.2:
     resolution: {integrity: sha512-mrqyZKfX5EhL7hvqcV6WG1yYjnjeuYDzDhhcAAUrq8Po85NBQBJP+ZDUT75qZQ98IkUoBqdkExkukOU7Ts2wrw==}
 
@@ -3855,10 +3826,6 @@ packages:
   kind-of@6.0.3:
     resolution: {integrity: sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw==}
     engines: {node: '>=0.10.0'}
-
-  kitx@https://registry.npmmirror.com/kitx/-/kitx-1.3.0.tgz:
-    resolution: {integrity: sha512-fhBqFlXd0GkKTB+8ayLfpzPUw+LHxZlPAukPNBD1Om7JMeInT+/PxCAf1yLagvD+VKoyWhXtJR68xQkX/a0wOQ==, tarball: https://registry.npmmirror.com/kitx/-/kitx-1.3.0.tgz}
-    version: 1.3.0
 
   lightningcss-darwin-arm64@1.29.2:
     resolution: {integrity: sha512-cK/eMabSViKn/PG8U/a7aCorpeKLMlK0bQeNHmdb7qUnBkNPnL+oV5DjJUo0kqWsJUapZsM4jCfYItbqBDvlcA==}
@@ -5195,10 +5162,6 @@ packages:
   safer-buffer@2.1.2:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
 
-  sax@https://registry.npmmirror.com/sax/-/sax-1.4.1.tgz:
-    resolution: {integrity: sha512-+aWOz7yVScEGoKNd4PA10LZ8sk0A/z5+nXQG5giUO5rprX9jgYsTdov9qCchZiPIZezbZH+jRut8nPodFAX4Jg==, tarball: https://registry.npmmirror.com/sax/-/sax-1.4.1.tgz}
-    version: 1.4.1
-
   saxes@6.0.0:
     resolution: {integrity: sha512-xAg7SOnEhrm5zI3puOOKyy1OMcMlIJZYNJY7xLBwSze0UjhPLnWfj2GF2EpT0jmzaJKIWKHLsaSSajf35bcYnA==}
     engines: {node: '>=v12.22.7'}
@@ -5963,16 +5926,6 @@ packages:
     resolution: {integrity: sha512-EvGK8EJ3DhaHfbRlETOWAS5pO9MZITeauHKJyb8wyajUfQUenkIg2MvLDTZ4T/TgIcm3HU0TFBgWWboAZ30UHg==}
     engines: {node: '>=18'}
 
-  xml2js@https://registry.npmmirror.com/xml2js/-/xml2js-0.5.0.tgz:
-    resolution: {integrity: sha512-drPFnkQJik/O+uPKpqSgr22mpuFHqKdbS835iAQrUC73L2F5WkboIRd63ai/2Yg6I1jzifPFKH2NTK+cfglkIA==, tarball: https://registry.npmmirror.com/xml2js/-/xml2js-0.5.0.tgz}
-    version: 0.5.0
-    engines: {node: '>=4.0.0'}
-
-  xmlbuilder@https://registry.npmmirror.com/xmlbuilder/-/xmlbuilder-11.0.1.tgz:
-    resolution: {integrity: sha512-fDlsI/kFEx7gLvbecc0/ohLG50fugQp8ryHzMTuW9vSa1GJ0XYWKnhsUx7oie3G98+r56aTQIUB4kht42R3JvA==, tarball: https://registry.npmmirror.com/xmlbuilder/-/xmlbuilder-11.0.1.tgz}
-    version: 11.0.1
-    engines: {node: '>=4.0'}
-
   xmlchars@2.2.0:
     resolution: {integrity: sha512-JZnDKK8B0RCDw84FNdDAIpZK+JuJw+s7Lz8nksI7SIuU3UXJJslUthsi+uWBUYOwPFwW7W7PRLRfUKpxjtjFCw==}
 
@@ -6010,16 +5963,6 @@ snapshots:
   '@acemir/cssom@0.9.28': {}
 
   '@adobe/css-tools@4.4.4': {}
-
-  '@alicloud/pop-core@https://registry.npmmirror.com/@alicloud/pop-core/-/pop-core-1.7.13.tgz(supports-color@https://registry.npmmirror.com/supports-color/-/supports-color-8.1.1.tgz)':
-    dependencies:
-      debug: https://registry.npmmirror.com/debug/-/debug-3.2.7.tgz(supports-color@https://registry.npmmirror.com/supports-color/-/supports-color-8.1.1.tgz)
-      httpx: https://registry.npmmirror.com/httpx/-/httpx-2.3.3.tgz(supports-color@https://registry.npmmirror.com/supports-color/-/supports-color-8.1.1.tgz)
-      json-bigint: https://registry.npmmirror.com/json-bigint/-/json-bigint-1.0.0.tgz
-      kitx: https://registry.npmmirror.com/kitx/-/kitx-1.3.0.tgz
-      xml2js: https://registry.npmmirror.com/xml2js/-/xml2js-0.5.0.tgz
-    transitivePeerDependencies:
-      - supports-color
 
   '@alloc/quick-lru@5.2.0': {}
 
@@ -8435,8 +8378,6 @@ snapshots:
 
   big.js@5.2.2: {}
 
-  bignumber.js@https://registry.npmmirror.com/bignumber.js/-/bignumber.js-9.1.2.tgz: {}
-
   body-parser@2.2.1(supports-color@https://registry.npmmirror.com/supports-color/-/supports-color-8.1.1.tgz):
     dependencies:
       bytes: 3.1.2
@@ -8710,12 +8651,6 @@ snapshots:
   debug@4.4.3(supports-color@https://registry.npmmirror.com/supports-color/-/supports-color-8.1.1.tgz):
     dependencies:
       ms: 2.1.3
-    optionalDependencies:
-      supports-color: https://registry.npmmirror.com/supports-color/-/supports-color-8.1.1.tgz
-
-  debug@https://registry.npmmirror.com/debug/-/debug-3.2.7.tgz(supports-color@https://registry.npmmirror.com/supports-color/-/supports-color-8.1.1.tgz):
-    dependencies:
-      ms: https://registry.npmmirror.com/ms/-/ms-2.1.3.tgz
     optionalDependencies:
       supports-color: https://registry.npmmirror.com/supports-color/-/supports-color-8.1.1.tgz
 
@@ -9669,13 +9604,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  httpx@https://registry.npmmirror.com/httpx/-/httpx-2.3.3.tgz(supports-color@https://registry.npmmirror.com/supports-color/-/supports-color-8.1.1.tgz):
-    dependencies:
-      '@types/node': https://registry.npmmirror.com/@types/node/-/node-20.0.0.tgz
-      debug: https://registry.npmmirror.com/debug/-/debug-4.3.7.tgz(supports-color@https://registry.npmmirror.com/supports-color/-/supports-color-8.1.1.tgz)
-    transitivePeerDependencies:
-      - supports-color
-
   iconv-lite@0.6.3:
     dependencies:
       safer-buffer: 2.1.2
@@ -9943,10 +9871,6 @@ snapshots:
 
   jsesc@3.1.0: {}
 
-  json-bigint@https://registry.npmmirror.com/json-bigint/-/json-bigint-1.0.0.tgz:
-    dependencies:
-      bignumber.js: https://registry.npmmirror.com/bignumber.js/-/bignumber.js-9.1.2.tgz
-
   json-parse-better-errors@1.0.2: {}
 
   json-parse-even-better-errors@2.3.1: {}
@@ -9958,8 +9882,6 @@ snapshots:
   json5@2.2.3: {}
 
   kind-of@6.0.3: {}
-
-  kitx@https://registry.npmmirror.com/kitx/-/kitx-1.3.0.tgz: {}
 
   lightningcss-darwin-arm64@1.29.2:
     optional: true
@@ -11837,8 +11759,6 @@ snapshots:
 
   safer-buffer@2.1.2: {}
 
-  sax@https://registry.npmmirror.com/sax/-/sax-1.4.1.tgz: {}
-
   saxes@6.0.0:
     dependencies:
       xmlchars: 2.2.0
@@ -12687,13 +12607,6 @@ snapshots:
   ws@8.18.3: {}
 
   xml-name-validator@5.0.0: {}
-
-  xml2js@https://registry.npmmirror.com/xml2js/-/xml2js-0.5.0.tgz:
-    dependencies:
-      sax: https://registry.npmmirror.com/sax/-/sax-1.4.1.tgz
-      xmlbuilder: https://registry.npmmirror.com/xmlbuilder/-/xmlbuilder-11.0.1.tgz
-
-  xmlbuilder@https://registry.npmmirror.com/xmlbuilder/-/xmlbuilder-11.0.1.tgz: {}
 
   xmlchars@2.2.0: {}
 

@@ -2,7 +2,6 @@
 import prisma from '@/lib/prisma';
 import { getGeneratorName } from '@/lib/generatorName';
 import sendEmail from '@/lib/email';
-import sendPhone from '@/lib/phone';
 
 const handlerSendCode = async (type: string, params: any, code: string) => {
   const { identifier } = params;
@@ -33,10 +32,8 @@ const handlerSendCode = async (type: string, params: any, code: string) => {
     return info;
   }
 
-  if (type === 'phone') {
-    const info = await sendPhone(identifier, code);
-    return info;
-  }
+  // Phone SMS not supported in this version
+  return { success: false, message: '暂不支持手机验证码' };
 };
 
 // 发送验证码

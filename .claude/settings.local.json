@@ -15,7 +15,8 @@
       "Bash(pnpm build:*)",
       "Bash(git remote add:*)",
       "Bash(git remote set-url:*)",
-      "Bash(pnpm --version:*)"
+      "Bash(pnpm --version:*)",
+      "Bash(git add:*)"
     ],
     "deny": [],
     "ask": []
