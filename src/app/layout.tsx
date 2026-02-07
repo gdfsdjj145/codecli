@@ -24,13 +24,20 @@ export const metadata: Metadata = {
     '按量计费',
     '月卡',
     '日卡',
+    'Claude Code 中转',
+    'Claude Code API 代理',
   ],
   authors: [{ name: 'CodeCli Team' }],
   creator: 'CodeCli',
   publisher: 'CodeCli',
   metadataBase: new URL(siteUrl),
 
-  // Open Graph
+  // Canonical for homepage
+  alternates: {
+    canonical: siteUrl,
+  },
+
+  // Open Graph — images handled by opengraph-image.tsx
   openGraph: {
     type: 'website',
     locale: 'zh_CN',
@@ -39,23 +46,14 @@ export const metadata: Metadata = {
     title: 'CodeCli - Claude Code API 服务',
     description:
       'CodeCli 提供专业的 Claude Code API 中转服务，支持按量计费、日卡、月卡，稳定高速住宅 IP。',
-    images: [
-      {
-        url: `${siteUrl}/og-image.png`,
-        width: 1200,
-        height: 630,
-        alt: 'CodeCli - Claude Code API 服务',
-      },
-    ],
   },
 
-  // Twitter Card
+  // Twitter Card — image auto-resolved from opengraph-image.tsx
   twitter: {
     card: 'summary_large_image',
     title: 'CodeCli - Claude Code API 服务',
     description:
       'CodeCli 提供专业的 Claude Code API 中转服务，支持按量计费、日卡、月卡，稳定高速住宅 IP。',
-    images: [`${siteUrl}/og-image.png`],
   },
 
   // Robots
@@ -71,7 +69,7 @@ export const metadata: Metadata = {
     },
   },
 
-  // 图标
+  // Icons
   icons: {
     icon: [
       { url: '/favicons/icon_16x16.png', sizes: '16x16', type: 'image/png' },
@@ -84,10 +82,41 @@ export const metadata: Metadata = {
   },
 };
 
+// JSON-LD structured data for Organization + WebSite
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': `${siteUrl}/#organization`,
+      name: 'CodeCli',
+      url: siteUrl,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${siteUrl}/brand/logo.png`,
+      },
+      description:
+        'CodeCli 致力于为中国开发者提供稳定、高速、便捷的 AI 模型接口服务。',
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${siteUrl}/#website`,
+      url: siteUrl,
+      name: 'CodeCli',
+      publisher: { '@id': `${siteUrl}/#organization` },
+      inLanguage: 'zh-CN',
+    },
+  ],
+};
+
 export default function Layout({ children }: { children: ReactNode }) {
   return (
     <html lang="zh-CN" suppressHydrationWarning>
       <body className="flex min-h-screen flex-col">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <RootProvider>{children}</RootProvider>
       </body>
     </html>

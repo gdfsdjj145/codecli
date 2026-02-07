@@ -63,20 +63,11 @@ export async function generateMetadata(props: {
       siteName: 'CodeCli',
       title,
       description,
-      images: [
-        {
-          url: `${siteUrl}/og-image.png`,
-          width: 1200,
-          height: 630,
-          alt: title,
-        },
-      ],
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description,
-      images: [`${siteUrl}/og-image.png`],
     },
     alternates: {
       canonical: pageUrl,

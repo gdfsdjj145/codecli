@@ -2,7 +2,8 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
+import { useState, useEffect } from 'react';
 
 /* ── animation helpers ─────────────────────────────────── */
 const fadeUp = {
@@ -19,6 +20,13 @@ const stagger = {
 };
 
 export default function Home() {
+  // SSR renders with visible state so crawlers see full content.
+  // After hydration, animations play normally.
+  const [hydrated, setHydrated] = useState(false);
+  const prefersReducedMotion = useReducedMotion();
+  useEffect(() => { setHydrated(true); }, []);
+  const shouldAnimate = hydrated && !prefersReducedMotion;
+  const initialState = shouldAnimate ? 'hidden' : 'visible';
   return (
     <div className="min-h-screen bg-[#fafbfc] antialiased">
       {/* ───────── Header ───────── */}
@@ -80,7 +88,7 @@ export default function Home() {
         />
 
         <motion.div
-          initial="hidden"
+          initial={initialState}
           animate="visible"
           variants={stagger}
           className="max-w-[800px] mx-auto px-6 relative z-10 text-center"
@@ -145,7 +153,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(0,171,182,0.04),transparent)] pointer-events-none" />
         <div className="max-w-[1100px] mx-auto px-6 relative z-10">
           <motion.div
-            initial="hidden"
+            initial={initialState}
             whileInView="visible"
             viewport={{ once: true, margin: '-80px' }}
             variants={stagger}
@@ -163,7 +171,7 @@ export default function Home() {
           </motion.div>
 
           <motion.div
-            initial="hidden"
+            initial={initialState}
             whileInView="visible"
             viewport={{ once: true, margin: '-60px' }}
             variants={stagger}
@@ -223,7 +231,7 @@ export default function Home() {
       <section id="compare" className="py-28 bg-[#fafbfc] relative">
         <div className="max-w-[1100px] mx-auto px-6">
           <motion.div
-            initial="hidden"
+            initial={initialState}
             whileInView="visible"
             viewport={{ once: true, margin: '-80px' }}
             variants={stagger}
@@ -327,7 +335,7 @@ export default function Home() {
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[radial-gradient(ellipse,rgba(0,171,182,0.04)_0%,transparent_70%)] pointer-events-none" />
         <div className="max-w-[1100px] mx-auto px-6 relative z-10">
           <motion.div
-            initial="hidden"
+            initial={initialState}
             whileInView="visible"
             viewport={{ once: true, margin: '-80px' }}
             variants={stagger}
@@ -346,7 +354,7 @@ export default function Home() {
 
           {/* Row 1: 3 cards */}
           <motion.div
-            initial="hidden"
+            initial={initialState}
             whileInView="visible"
             viewport={{ once: true, margin: '-60px' }}
             variants={stagger}
@@ -398,7 +406,7 @@ export default function Home() {
 
           {/* Row 2: 2 cards centered */}
           <motion.div
-            initial="hidden"
+            initial={initialState}
             whileInView="visible"
             viewport={{ once: true, margin: '-60px' }}
             variants={stagger}
@@ -450,7 +458,7 @@ export default function Home() {
           backgroundSize: '32px 32px',
         }} />
         <motion.div
-          initial="hidden"
+          initial={initialState}
           whileInView="visible"
           viewport={{ once: true }}
           variants={stagger}
