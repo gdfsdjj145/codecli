@@ -16,7 +16,13 @@
       "Bash(git remote add:*)",
       "Bash(git remote set-url:*)",
       "Bash(pnpm --version:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "WebSearch",
+      "WebFetch(domain:api.github.com)",
+      "Bash(git clone:*)",
+      "Bash(python3:*)",
+      "Bash(npx tsx:*)",
+      "Bash(npm install)"
     ],
     "deny": [],
     "ask": []
