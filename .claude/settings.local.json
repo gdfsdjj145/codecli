@@ -22,7 +22,8 @@
       "Bash(git clone:*)",
       "Bash(python3:*)",
       "Bash(npx tsx:*)",
-      "Bash(npm install)"
+      "Bash(npm install)",
+      "Bash(pnpm install:*)"
     ],
     "deny": [],
     "ask": []
